@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUMA DE FRACCIONES</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 20px;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h2>SUMA DE FRACCIONES</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Potencia</th>
+                <th>Fraccion</th>
+                <th>Suma</th>
+            </tr>
+        </thead>
+        
+        <tbody id="tablaDatos"></tbody>
+    </table>
+
+    <script>
+        function generarPotenciasFraccionales() {
+            let potencia = 1;
+            let fraccion = 1 / 2;
+            let suma = fraccion;
+
+            const tablaDatos = document.getElementById('tablaDatos');
+
+            while (fraccion >= 0.000001) {
+                const fila = document.createElement('tr');
+                fila.innerHTML = `<td>${potencia}</td><td>${fraccion.toFixed(potencia+1)}</td><td>${suma.toFixed(potencia+1)}</td>`;
+                tablaDatos.appendChild(fila);
+
+                potencia++;
+                fraccion /= 2;
+                suma += fraccion;
+            }
+        }
+
+        generarPotenciasFraccionales();
+    </script>
+
+</body>
+</html>

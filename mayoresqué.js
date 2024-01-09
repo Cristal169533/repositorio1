@@ -1,4 +1,4 @@
-
+<button onclick="mayoresQueX()">Verificar</button>
     function mayoresQueX() {
     let numeros = [6];
     let size = 5;
